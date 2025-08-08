@@ -2,10 +2,10 @@
 const admin = require('firebase-admin');
 
 // تحميل ملف الخدمة JSON من Firebase Console
-const serviceAccount = require('./serviceAccountKey.json');
+const serviceAccount = require('./FIREBASE_SERVICE_ACCOUNT.json');
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert(FIREBASE_SERVICE_ACCOUNT),
 });
 
 const express = require('express');
