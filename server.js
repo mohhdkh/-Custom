@@ -1,4 +1,3 @@
-// server.js
 const admin = require('firebase-admin');
 
 // تحميل ملف الخدمة JSON من Firebase Console
@@ -11,6 +10,11 @@ admin.initializeApp({
 const express = require('express');
 const app = express();
 app.use(express.json());
+
+// مسار بسيط لتأكيد تشغيل السيرفر
+app.get('/', (req, res) => {
+  res.send('Server is running ✅');
+});
 
 // مثال مسار لإصدار Custom Token
 app.post('/generateCustomToken', async (req, res) => {
