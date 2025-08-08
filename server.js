@@ -2,7 +2,7 @@
 const admin = require('firebase-admin');
 
 // تحميل ملف الخدمة JSON من Firebase Console
-const serviceAccount = require('./najdah-17dba-firebase-adminsdk-fbsvc-dfc23beff1.json');
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
