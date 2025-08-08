@@ -3,7 +3,7 @@ const admin = require('firebase-admin');
 console.log('Service Account:', process.env.FIREBASE_SERVICE_ACCOUNT ? 'Loaded' : 'Missing');
 
 // تحميل ملف الخدمة JSON من Firebase Console
-const serviceAccount = require('./FIREBASE_SERVICE_ACCOUNT.json');
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
